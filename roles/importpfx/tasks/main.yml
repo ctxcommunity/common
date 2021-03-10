@@ -1,0 +1,7 @@
+      - name: Import PFX Certificate {{ certificate_pfx_name }} that is Password Protected - (Password in Vaulted File)
+        win_certificate_store:
+          path: "{{ certificate_smb_location }}\\{{ certificates[certificate_pfx_name].certificate_pfx_file }}"
+          state: "{{ certificate_install_state }}"
+          password: "{{ certificates[certificate_pfx_name].certificate_pfx_password }}"
+          key_storage: machine
+        become: yes

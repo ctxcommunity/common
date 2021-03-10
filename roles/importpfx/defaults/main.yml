@@ -1,0 +1,5 @@
+---
+  smb_location: \\file1\automation
+  certificate_smb_location: "{{ smb_location }}\\Certificates"
+  certificate_pfx_name: wildcard2021
+  certificate_install_state: present
