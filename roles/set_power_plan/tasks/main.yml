@@ -1,0 +1,4 @@
+---
+  - name: "Change power plan to {{ power_plan_name }}"
+    win_power_plan:
+      name: "{{ power_plan_name }}"

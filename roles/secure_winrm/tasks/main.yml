@@ -1,0 +1,10 @@
+---
+  - name: Disable Allow for Unencypted WinRM traffic
+    win_shell: cmd.exe /c 'winrm set winrm/config/service @{AllowUnencrypted="false"}'
+    become: yes
+  - name: Remove Basic Authentication from WinRM
+    win_shell: cmd.exe /c 'winrm set winrm/config/service/auth @{Basic="false"}'
+    become: yes
+  - name: Remove HTTP Listener for WinRM leaving only the HTTPS Listener
+    win_shell: Get-ChildItem -Path WSMan:\localhost\Listener | Where-Object { $_.Keys -contains "Transport=HTTP" } | Remove-Item -Recurse -Force
+    become: yes

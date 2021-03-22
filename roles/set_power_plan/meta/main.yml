@@ -1,0 +1,19 @@
+galaxy_info:
+  role_name: set_power_plan
+  author: Joe Shonk
+  description: Set the Windows OS Power Plan
+  company: The Shonk Project
+
+  license: GPL-3.0-only
+
+  min_ansible_version: 2.9
+
+  platforms:
+   - name: Windows
+     versions:
+     - All
+
+  galaxy_tags:
+    - powerplan
+
+dependencies: []
